@@ -35,10 +35,10 @@ async function clearMessages() {
 			let date = new Date(null);
 			date.setSeconds(seconds_left);
 			let timeString = date.toISOString().substr(11, 8);
-			console.log("Il reste encore " + json.total_results + " messages à supprimer.(Temps restant: ~"+timeString+")");
+			console.log("Progress " + json.total_results + " messages left.(Time Remaining: ~"+timeString+")");
 		}
 	}else{	
-		console.log("Il reste encore " + json.total_results + " messages à supprimer.(Temps restant: CALCUL...)");
+		console.log("Progress " + json.total_results + " left.(Time Remaining: CALCULATE...)");
 	}
 	endtime = new Date();
 	previous_scan_count = current_scan_count;
@@ -55,7 +55,7 @@ async function clearMessages() {
 	if (json.total_results > 0) {
 		delay(clock += interval).then(() => { clearMessages(); }); 
 	} else {
-		console.log("Suppression des messages terminé.")
+		console.log("Deletion Done.")
 	};
 }
 clearMessages();
